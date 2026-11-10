@@ -1,3 +1,5 @@
+// Encapsulation
+
 class User {
     constructor (
         public name : string,
@@ -16,7 +18,7 @@ class User {
     set setSalary (newSalary : number)  {
 
         if (newSalary < 0) {
-            throw new Error("Salary Can't Received to Negative Currency")
+            throw new Error("Salary Can't Received to Negative Value")
         }
 
         this._salary = newSalary
@@ -27,4 +29,4 @@ const user1 = new User("Mezba", 24, 15000);
 
 user1.setSalary = 56000
 
-console.log(user1.salaryWithBonus);
+// console.log(user1.salaryWithBonus);
