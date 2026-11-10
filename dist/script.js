@@ -1,1 +1,0 @@
-import "./class-object.js";
