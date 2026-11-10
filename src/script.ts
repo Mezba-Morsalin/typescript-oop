@@ -1,3 +1,1 @@
-const name : string = "Mezba"
-
-console.log(name);
+import "./class-object.js"
