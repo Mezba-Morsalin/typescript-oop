@@ -3,7 +3,7 @@
 class SalaryByUser {
     constructor (
        public name : string, 
-       private _salary : number) {
+       protected _salary : number) {
     }
 
     get salary () : number {
@@ -32,13 +32,24 @@ const userOne = new SalaryByUser("Mezba", 20000)
 // console.log(userOne.describe());
 
 class Manager extends SalaryByUser{
-    totalMemberCount : number;
-    constructor (totalMemberCount : number , name : string, salary : number) {
+    constructor (
+       public totalMemberCount : number , 
+        name : string, 
+        salary : number) {
         super (name, salary)
         this.totalMemberCount = totalMemberCount
     }
+
+    describeManagerWork () : string {
+        return `Manager ${this.name} manages ${this.totalMemberCount} peoples`
+    }
+
+    describeManager () : string {
+        return `${this.name} is a Manager and Salary is ${this._salary}`
+    }
 }
 
-const manager = new Manager(3, "Sobuj", 52000);
+const manager = new Manager(25, "Sobuj", 52000);
 
-console.log(manager);
+console.log(manager.describeManagerWork());
+console.log(manager.describeManager());
